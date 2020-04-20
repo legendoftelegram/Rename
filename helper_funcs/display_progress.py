@@ -56,13 +56,6 @@ async def progress_for_pyrogram(client, current, total, ud_type, message_id, cha
                     text="✅ **Your Running Program cancelled succesfully..**"
             )
             await client.stop_transmission()
-        if speed < 1000000:
-            await client.send_message(
-                chat_id=update.chat.id,
-                reply_to_message_id=update.reply_to_message.message_id,
-                text="⚠️ **Renaming cancelled due to Low Speed file. Try after some time or Try other Files** 📁."
-            )
-            await client.stop_transmission()
         try:
             await client.edit_message_text(
                 chat_id,

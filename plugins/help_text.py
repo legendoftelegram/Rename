@@ -80,7 +80,7 @@ async def upgrade(bot, update):
     )
     Config.SUPER7X_DLBOT_USERS.append(972276420)
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["showthumbnail"]))
+@pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))
 async def view_thumbnail(bot, update):
     photopath = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
     if os.path.exists(photopath):

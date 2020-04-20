@@ -1,20 +1,5 @@
 class Translation(object):
-    START_TEXT = """**Thank You for using me.**
-
-**Rename files with Custom Thumbnail Support..**
-
-Support Group : @InFoTelGroup
-Updates Channel : @TGBotsZ
-1. Send file
-2. Send custom Thumbnail
-3. Reply the file - /rename New file Name
-
-<b>Note: You must subscribe My updates Channel for using me 😌</b> 👉 @TGBotsZ
-
-<b>👉👉Do one By One rename. Otherwise you will get Permenent Ban</b>
-/help for more details..
-
-© @ViruZs"""
+    START_TEXT = """100%safe fully privacy potected"""
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
     # UPGRADE_TEXT = "no one gonna help you 🤣🤣🤣🤣"

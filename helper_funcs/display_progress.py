@@ -38,35 +38,42 @@ async def progress_for_pyrogram(client, current, total, ud_type, message_id, cha
         #estimated_total_time = await time_formatter(milliseconds=estimated_total_time)
 
         progress = "<code>[{0}{1}]| {2}%</code>\n\n".format(
-            ''.join(["●" for i in range(math.floor(percentage / 5))]),
-            ''.join(["○" for i in range(20 - math.floor(percentage / 5))]),
+            ''.join(["◼️" for i in range(math.floor(percentage / 5))]),
+            ''.join(["◻️" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2))
 
-        tmp = progress + "<i>{}</i> <b>of</b> <i>{}</i>\n<b>Speed:</b> <i>{}/s</i>\n<b>Remaining:</b> <i>{}</i>\n".format(
+        tmp = progress + "<b>{}</b> <b>of</b> <b>{}</b>\n<b>Speed:</b> <b>{}/s</b>\n<b>Remaining:</b> <b>{}</b> /Cancel".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
             time_to_completion if time_to_completion != '' else "0 s"
         )
         if update.chat.id in userids:
-            userids.remove(update.chat.id)
+            userids.remove(update.chat.id) 
             await client.send_message(
-                    chat_id=chat_id,
-                    reply_to_message_id=update.reply_to_message.message_id,
-                    text="✅ **Your Running Program cancelled succesfully..**"
+                chat_id=chat_id,
+                text="cancelled"
             )
             await client.stop_transmission()
-        try:
-            await client.edit_message_text(
-                chat_id,
-                message_id,
-                text="{}\n {} /cancel - **Cancel this Process**".format(
-                    ud_type,
-                    tmp
-                )
+        if speed < 1000000:
+            await client.send_message(
+                chat_id=chat_id,
+                text="slow file detected😡canceling."
+        )
+        if speed < 1000050:
+            await client.stop_transmission()
+
+    try:
+        await client.edit_message_text(
+            chat_id,
+            message_id,
+            text="{}\n {}".format(
+                ud_type,
+                tmp
             )
-        except:
-            pass
+        )
+    except:
+        pass
 
 
 def humanbytes(size):

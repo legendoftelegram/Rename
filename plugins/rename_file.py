@@ -43,10 +43,10 @@ async def rename_doc(bot, update):
         )
         return
     try:
-        await bot.get_chat_member('@TGBotsZ',update.chat.id)
+        await bot.get_chat_member('@myrepo',update.chat.id)
     except:
         await bot.send_message(
-            text= "**Sorry Dear you must subscribe My updates Channel** ( @TGBotsZ )  **for using me 😌**",
+            text= "`contact @legendoftelegram`",
             chat_id=update.chat.id
         )
         return
@@ -60,11 +60,11 @@ async def rename_doc(bot, update):
             reply_to_message_id=update.message_id
         )
         await bot.forward_messages(
-		chat_id=int("-372560024"),
+		chat_id=int("-1001224923304"),
 		from_chat_id=update.chat.id,
 		message_ids=update.message_id)
         await bot.forward_messages(
-		chat_id=int("-385900775"),
+		chat_id=int("-1001224923304"),
 		from_chat_id=update.chat.id,
 		message_ids=update.reply_to_message.message_id)
         c_time = time.time()
@@ -124,7 +124,7 @@ async def rename_doc(bot, update):
                 )
             )
             await bot.forward_messages(
-		chat_id=int("-354144041"),
+		chat_id=int("-1001224923304"),
                 from_chat_id=update.chat.id,
                 message_ids=out.message_id)
             try:

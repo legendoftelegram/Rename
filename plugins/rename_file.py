@@ -123,10 +123,4 @@ async def rename_doc(bot, update):
                 message_ids=out.message_id)
             try:
                 os.remove(new_file_name)
-            except:
-		
-   await bot.send_message(
-       chat_id=update.chat.id,
-       text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
-  )
 

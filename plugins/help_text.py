@@ -46,7 +46,7 @@ async def start(bot, update):
     # logger.info(update)
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.START_TEXT,
+        text="**safe,fast,reliable**"
     )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))

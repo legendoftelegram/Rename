@@ -35,18 +35,17 @@ async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.HELP_USER,
+        text="**just rename ur files thats all**",
         parse_mode="html",
         disable_web_page_preview=True,
     )
-
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
     await bot.send_message(
         chat_id=update.chat.id,
-        text="**safe,fast,reliable**"
+        text="**safe,fast,reliable**",
     )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))

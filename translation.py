@@ -11,7 +11,7 @@ class Translation(object):
     CURENT_PLAN_DETAILS = """
 <b>safe,fast,reliable</b> """
     REPLY_TO_DOC_FOR_RENAME_FILE = "<b>Hei, Reply to a Telegram media to /rename with custom thumbnail support</b>"
-    REPLY_TO_MEDIA_ALBUM_TO_GEN_THUMB = "Reply /sthumb to a media album, to generate custom thumbail**"
+    REPLY_TO_MEDIA_ALBUM_TO_GEN_THUMB = "**Reply /sthumb to a media album, to generate custom thumbail**"
     ERR_ONLY_TWO_MEDIA_IN_ALBUM = "**Media Album should contain only two photos**"
     CANCEL_STR = "**Process Cancelled**"
     CANCEL_TEXT = "**cancelled succesfully**"

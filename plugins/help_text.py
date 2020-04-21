@@ -35,9 +35,7 @@ async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
         chat_id=update.chat.id,
-        text="**just rename ur files thats all**",
-        parse_mode="html",
-        disable_web_page_preview=True,
+        text="**just rename ur files thats all**"
     )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))

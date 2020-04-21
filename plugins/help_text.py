@@ -29,7 +29,14 @@ def GetExpiryDate(chat_id):
     expires_at = (str(chat_id))
     return expires_at
 
-
+@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
+async def start(bot, update):
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.START,
+        reply_to_message_id=update.message_id
+    )
+    
 @pyrogram.Client.on_message(pyrogram.Filters.command(["help", "about"]))
 async def help_user(bot, update):
     # logger.info(update)
@@ -37,14 +44,6 @@ async def help_user(bot, update):
         chat_id=update.chat.id,
         text="**just rename ur files thats all**"
     )
-
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
-async def start(bot, update):
-    # logger.info(update)
-    await bot.send_message(
-        chat_id=update.chat.id,
-        text=Translation.START,
-    )    
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))
 async def view_thumbnail(bot, update):

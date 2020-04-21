@@ -124,15 +124,7 @@ async def rename_doc(bot, update):
             try:
                 os.remove(new_file_name)
             except:
-                pass
-            await bot.edit_message_text(
-                text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG,
-                chat_id=update.chat.id,
-                message_id=b.message_id,
-                disable_web_page_preview=True
-            )
-    else:
-        await bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
-        )
+          await bot.send_message(
+              chat_id=update.chat.id,
+              text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
+         )

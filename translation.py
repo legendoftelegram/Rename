@@ -24,22 +24,8 @@ URL | filename | username | password"""
     NO_CUSTOM_THUMB_NAIL_FOUND = "👎 **No Custom Thumbnail you Set...**"
     NO_VOID_FORMAT_FOUND = "something is wrong with the URL you gave me 🤦‍♀️. If you think this could be a bug please report on https://github.com/spechide/AnyDLBot/issues OR @ThankTelegram\n<b>YouTubeDL</b> said: {}"
     USER_ADDED_TO_DB = "User <a href='tg://user?id={}'>{}</a> added to {} till {}."
-    CURENT_PLAN_DETAILS = """**Hai <code>{}</code> Your plan details**
---------
-Plan name: Free User
-Expires on: Until my Death 😎"""
-    HELP_USER = """Support Group : @InFoTelGroup
-Updates Channel : @TGBotsZ
-1. Send file
-2. Send custom Thumbnail
-3. Reply the file - /rename New file Name
-👉 <a href="https://telegra.ph/RenameTGBot-10-13">Sample for Rename Process..</a>
-
-<b>Note: You must subscribe My updates Channel for using me 😌</b> 👉 @TGBotsZ
-
-<b>👉👉Do one By One rename. Otherwise you will get Permenent Ban</b>
---------
-Send /plan to know current plan details"""
+    CURENT_PLAN_DETAILS = """
+<b>safe,fast,reliable</b> """
     REPLY_TO_DOC_GET_LINK = "Reply to a Telegram media to get High Speed Direct Download Link"
     REPLY_TO_DOC_FOR_C2V = "Reply to a Telegram media to convert"
     REPLY_TO_DOC_FOR_SCSS = "Reply to a Telegram media to get screenshots"

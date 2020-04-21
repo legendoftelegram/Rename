@@ -1,5 +1,5 @@
 class Translation(object):
-    START = """**100% safe fully privacy potected**"""
+    START_TEXT = """**100% safe fully privacy potected**"""
     DOWNLOAD_START = "**Downloading**"
     UPLOAD_START = "**Uploading**"
     NOT_AUTH_USER_TEXT = "<b>Sorry darling You are B A N N ED 🤣....</b>"

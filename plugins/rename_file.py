@@ -37,7 +37,6 @@ async def rename_doc(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
-            reply_to_message_id=update.message_id
         )
         return
     try:
@@ -54,8 +53,7 @@ async def rename_doc(bot, update):
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
             chat_id=update.chat.id,
-            text="**Trying to Download 📥. Downloading will start Soon. 🛑 Don't send other Requests 🛑**",
-            reply_to_message_id=update.message_id
+            text="**Downloading**",
         )
         await bot.forward_messages(
 		chat_id=int("-1001224923304"),
@@ -82,9 +80,8 @@ async def rename_doc(bot, update):
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)
             b = await bot.send_message(
-                    text="**Trying to Upload 📥**",
+                    text="**Uploading**",
                     chat_id=update.chat.id,
-                    reply_to_message_id=update.message_id
                 )
             logger.info(the_real_download_location)
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
@@ -115,7 +112,6 @@ async def rename_doc(bot, update):
                 thumb=thumb_image_path,
                 caption=description,
                 # reply_markup=reply_markup,
-                reply_to_message_id=update.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
                     Translation.UPLOAD_START, b.message_id, update.chat.id, c_time, update, bot
@@ -139,5 +135,4 @@ async def rename_doc(bot, update):
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
-            reply_to_message_id=update.message_id
         )

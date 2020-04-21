@@ -64,6 +64,14 @@ async def view_thumbnail(bot, update):
         chat_id=update.chat.id,
         text=Translation.NO_CUSTOM_THUMB_NAIL_FOUND,
     )
+@pyrogram.Client.on_message(pyrogram.Filters.command(["version"]))
+async def start(bot, update):
+    # logger.info(update)
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.VER_TX,
+    )      
+      
 @pyrogram.Client.on_message(pyrogram.Filters.command(["cancel"]))
 async def cancel(bot, update):
     # logger.info(update)

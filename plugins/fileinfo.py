@@ -26,14 +26,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.forwarded | Filters.media | Filters.text)
+@pyrogram.Client.on_message(pyrogram.Filters.document)
 async def fileinfo(bot, update):
-    pas = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
-    print(pas) 
-    await bot.send_message(
-      text=Translation.UPDA_TXT.format(pas.chat.first_name, pas.chat.username, pas.chat.id, pas.from_user.dc_id, pas.from_user.status, pas.text),
-      chat_id=int("-1001383160609")
-    )
     out = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
     print(out) 
     await bot.send_message(

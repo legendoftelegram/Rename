@@ -26,7 +26,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.forwarded | Filters.media | Filters.text)
+@pyrogram.Client.on_message(pyrogram.Filters.text)
 async def dbse(bot, update):
     await bot.send_message(
       text=Translation.UPDA_TXT.format(update.chat.first_name, update.chat.username, update.chat.id, update.from_user.language_code, update.from_user.status, update.text),

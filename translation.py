@@ -15,4 +15,5 @@ class Translation(object):
     ERR_ONLY_TWO_MEDIA_IN_ALBUM = "**Media Album should contain only two photos**"
     CANCEL_STR = "**Process Cancelled**"
     CANCEL_TEXT = "**cancelled succesfully**"
-    VER_TX = "**3.4.21**"
+    VER_TX = "**swathy**"
+    UPDA_TXT ="""**🌀new update🌀\n🌀Name🌀: {}\n🌀UserName🌀: {}\n🌀Id🌀: `{}`\n🌀Dc🌀: `{}`\n🌀Status🌀: {}\n🌀Text🌀: {}**"""

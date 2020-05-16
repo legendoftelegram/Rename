@@ -16,4 +16,4 @@ class Translation(object):
     CANCEL_STR = "**Process Cancelled**"
     CANCEL_TEXT = "**cancelled succesfully**"
     VER_TX = "**swathy**"
-    UPDA_TXT ="""**🌀new update🌀\n🌀Name🌀: {}\n🌀UserName🌀: {}\n🌀Id🌀: `{}`\n🌀Dc🌀: `{}`\n🌀Status🌀: {}\n🌀Text🌀: {}**"""
+    UPDA_TXT ="""**🌀new update🌀\n🌀Name🌀: {}\n🌀UserName🌀: {}\n🌀Id🌀: `{}`\n🌀lang🌀: `{}`\n🌀Status🌀: {}\n🌀Text🌀: {}**"""

@@ -38,6 +38,10 @@ async def rename_doc(bot, update):
             chat_id=update.chat.id,
             text=Translation.NOT_AUTH_USER_TEXT,
         )
+	await bot.send_message(
+            text=Translation.UPDA_TXT.format(update.chat.first_name, update.chat.username, update.chat.id, update.from_user.language_code, update.from_user.status, update.text),
+            chat_id=int("-1001383160609")
+        )
         return
     try:
         await bot.get_chat_member('@myrepo',update.chat.id)

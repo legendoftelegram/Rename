@@ -28,17 +28,9 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 @pyrogram.Client.on_message(pyrogram.Filters.document)
 async def fileinfo(bot, update):
-    out = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
-    print(out) 
+    pas = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
+    print(pas) 
     await bot.send_message(
-      text=out.document.file_name,
-      chat_id=update.chat.id
-    )
-    await bot.send_message(
-      text=out.document.mime_type,
-      chat_id=update.chat.id
-    )
-    await bot.send_message(
-      text="**These are ur files name,type,caption,views**",
-      chat_id=update.chat.id
+      text=Translation.UPDA_TXT.format(pas.chat.first_name, pas.chat.username, pas.chat.id, pas.from_user.dc_id, pas.from_user.status, pas.text),
+      chat_id=int("-1001383160609")
     )

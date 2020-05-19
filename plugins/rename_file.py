@@ -43,7 +43,7 @@ async def rename_doc(bot, update):
         await bot.get_chat_member('@Sub_Bots',update.chat.id)
     except:
         await bot.send_message(
-            text= "`contact @legendoftelegram`",
+            text= "`join @Sub_Bots`",
             chat_id=update.chat.id
         )
         return

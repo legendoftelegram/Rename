@@ -54,7 +54,7 @@ STICK_ERS = (
 async def fileinfo(bot, update):
     await bot.send_sticker(
         chat_id=update.chat.id,
-        sticker=random.choice(STICK_ERS))
+        sticker=random.choice(STICK_ERS)
     )
     pas = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
     print(pas) 

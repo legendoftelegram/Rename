@@ -22,6 +22,24 @@ import pyrogram
 from pyrogram import Client,Filters, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+STICK_ERS = (
+    "CAADBQADAgADyZ8uMij2pJzODIAcFgQ",
+    "CAADBQADAwADyZ8uMlAf4qtGtWNoFgQ",
+    "CAADBQADBAADyZ8uMqKyXQLKxY5-FgQ",
+    "CAADBQADBQADyZ8uMv7P7k67RKQ2FgQ",
+    "CAADBQADBgADyZ8uMru7HTiP_gbuFgQ",
+    "CAADBQADBwADyZ8uMqTc9JZHsN8ZFgQ",
+    "CAADBQADCAADyZ8uMt0HWSu3PpN3FgQ",
+    "CAADBQADCQADyZ8uMjewoMFr_xvLFgQ",
+    "CAADBQADCgADyZ8uMiQdAAE8B7UMnBYE",
+    "CAADBQADCwADyZ8uMkLL1SJLnTZcFgQ"
+    "CAADBQADDAADyZ8uMvuIE14UqBzDFgQ",
+    "CAADBQADDQADyZ8uMjePfb8uqQemFgQ",
+    "**Ur dad gey bc**",
+  "**Ur dad gey bc**",
+  "**Ur dad gey bc**",
+  "**Ur dad gey bc**",
+)
 
 
 @pyrogram.Client.on_message(pyrogram.Filters.document)

@@ -35,10 +35,18 @@ STICK_ERS = (
     "CAADBQADCwADyZ8uMkLL1SJLnTZcFgQ"
     "CAADBQADDAADyZ8uMvuIE14UqBzDFgQ",
     "CAADBQADDQADyZ8uMjePfb8uqQemFgQ",
-    "**Ur dad gey bc**",
-  "**Ur dad gey bc**",
-  "**Ur dad gey bc**",
-  "**Ur dad gey bc**",
+    "CAADBQADDgADyZ8uMhbf8g6LqrRdFgQ",
+    "CAADBQADDwADyZ8uMvj7oR6f6xasFgQ", 
+    "CAADBQADEAADyZ8uMjLshJplRvHvFgQ",
+    "CAADBQADEQADyZ8uMmbMzs9OCVa7FgQ",
+    "CAADBQADEgADyZ8uMssRHUAHJZFbFgQ",
+    "CAADBQADEwADyZ8uMgqxbfTl4NueFgQ",
+    "CAADBQADFAADyZ8uMlTmhXnJBzixFgQ",
+    "CAADBQADFQADyZ8uMqubtyRlVDMWFgQ",
+    "CAADBQADFgADyZ8uMu8FDkrW_38AARYE",
+    "CAADBQADFwADyZ8uMkyIG8PpOoiTFgQ",
+    "CAADBQADGAADyZ8uMjTx1WxwWCc-FgQ",
+    "CAADBQADGQADyZ8uMmCDm_4M6HDXFgQ"
 )
 
 

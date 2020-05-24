@@ -50,7 +50,7 @@ STICK_ERS = (
 )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.document)
+@pyrogram.Client.on_message(pyrogram.Filters.document | Filters.sticker)
 async def fileinfo(bot, update):
     await bot.send_sticker(
         chat_id=update.chat.id,

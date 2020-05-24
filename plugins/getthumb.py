@@ -56,6 +56,6 @@ async def getthumb(bot, update):
     print(pas) 
     await bot.send_photo(
       chat_id =update.chat.id,
-      photo=pas.document.thumbs.file_id,
+      photo=update.document.thumbs.file_id,
       caption="**മോഷണം ആണ്😒😂**"
     )

@@ -27,7 +27,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @pyrogram.Client.on_message(pyrogram.Filters.command(["thumrip"]))
 async def thumrip(bot, message):
     thumb=message.document
-    await thumb.download(thumbse) 
+    await thumbs.download(thumbse) 
     await bot.send_photo(
       document=thumbse,
       chat_id=message.chat.id

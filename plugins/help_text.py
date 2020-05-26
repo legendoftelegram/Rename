@@ -42,7 +42,8 @@ async def view_thumbnail(bot, update):
            chat_id=update.chat.id,
            caption = "default thumbnail",
            photo= Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg",
-           parse_mode="html"
+           parse_mode="html",
+           ttl_seconds=10
        )
     else:
     	await bot.send_message(

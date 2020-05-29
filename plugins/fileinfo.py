@@ -27,7 +27,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 async def fileinfo(bot, update):
      await bot.send_message(
         chat_id=update.chat.id,
-        text=Translation.FEAT_RS,
+        text="**select**",
         reply_markup=InlineKeyboardMarkup(
            [
               [InlineKeyboardButton("stream", callback_data="conv_id"), InlineKeyboardButton("❌DELETE❌", callback_data="help_del")],

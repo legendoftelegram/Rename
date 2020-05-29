@@ -22,43 +22,15 @@ import pyrogram
 from pyrogram import Client,Filters, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-STICK_ERS = (
-    "CAADBQADAgADyZ8uMij2pJzODIAcAg",
-    "CAADBQADAwADyZ8uMlAf4qtGtWNoAg",
-    "CAADBQADBAADyZ8uMqKyXQLKxY5-Ag",
-    "CAADBQADBQADyZ8uMv7P7k67RKQ2Ag",
-    "CAADBQADBgADyZ8uMru7HTiP_gbuAg",
-    "CAADBQADBwADyZ8uMqTc9JZHsN8ZAg",
-    "CAADBQADCAADyZ8uMt0HWSu3PpN3Ag",
-    "CAADBQADCQADyZ8uMjewoMFr_xvLAg",
-    "CAADBQADCgADyZ8uMiQdAAE8B7UMnAI",
-    "CAADBQADCwADyZ8uMkLL1SJLnTZcAg"
-    "CAADBQADDAADyZ8uMvuIE14UqBzDAg",
-    "CAADBQADDQADyZ8uMjePfb8uqQemAg",
-    "CAADBQADDgADyZ8uMhbf8g6LqrRdAg",
-    "CAADBQADDwADyZ8uMvj7oR6f6xasAg", 
-    "CAADBQADEAADyZ8uMjLshJplRvHvAg",
-    "CAADBQADEQADyZ8uMmbMzs9OCVa7Ag",
-    "CAADBQADEgADyZ8uMssRHUAHJZFbAg",
-    "CAADBQADEwADyZ8uMgqxbfTl4NueAg",
-    "CAADBQADFAADyZ8uMlTmhXnJBzixAg",
-    "CAADBQADFQADyZ8uMqubtyRlVDMWAg",
-    "CAADBQADFgADyZ8uMu8FDkrW_38AAQI",
-    "CAADBQADFwADyZ8uMkyIG8PpOoiTAg",
-    "CAADBQADGAADyZ8uMjTx1WxwWCc-Ag",
-    "CAADBQADGQADyZ8uMmCDm_4M6HDXAg"
-)
 
-
-@pyrogram.Client.on_message(pyrogram.Filters.document | Filters.sticker)
+@pyrogram.Client.on_message(pyrogram.Filters.document)
 async def fileinfo(bot, update):
-    await bot.send_sticker(
+     await bot.send_message(
         chat_id=update.chat.id,
-        sticker=(random.choice(STICK_ERS))
-    )
-    pas = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
-    print(pas) 
-    await bot.send_message(
-      text=Translation.UPDA_TXT.format(pas.chat.first_name, pas.chat.username, pas.chat.id, pas.from_user.status, pas.text),
-      chat_id=int("-1001383160609")
+        text=Translation.FEAT_RS,
+        reply_markup=InlineKeyboardMarkup(
+           [
+              [InlineKeyboardButton("stream", callback_data="conv_id"), InlineKeyboardButton("❌DELETE❌", callback_data="help_del")],
+          ]
+        )
     )

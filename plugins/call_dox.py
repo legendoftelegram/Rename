@@ -34,8 +34,7 @@ async def button(bot, update):
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
             chat_id=update.message.chat.id,
-            text=Translation.DOWNLOAD_START,
-            reply_to_message_id=update.message_id
+            text=Translation.DOWNLOAD_START
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
@@ -50,7 +49,7 @@ async def button(bot, update):
         if the_real_download_location is not None:
             b = await bot.send_message(
                     text=Translation.UPLOAD_START,
-                    chat_id=update.chat.id
+                    chat_id=update.message.chat.id
             )
             logger.info(the_real_download_location)
             # get the correct width, height, and duration for videos greater than 10MB
@@ -84,7 +83,7 @@ async def button(bot, update):
             # try to upload file
             c_time = time.time()
             await bot.send_video(
-                chat_id=update.chat.id,
+                chat_id=update.message.chat.id,
                 video=the_real_download_location,
                 caption=description,
                 duration=duration,
@@ -107,7 +106,7 @@ async def button(bot, update):
                 pass
             await bot.edit_message_text(
                 text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG,
-                chat_id=update.chat.id,
+                chat_id=update.message.chat.id,
                 message_id=a.message_id,
                 disable_web_page_preview=True
             )

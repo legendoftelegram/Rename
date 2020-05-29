@@ -38,7 +38,7 @@ async def button(bot, update):
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
-            message=update.reply_to_message,
+            message=update.message,
             file_name=download_location,
             progress=progress_for_pyrogram,
             progress_args=(

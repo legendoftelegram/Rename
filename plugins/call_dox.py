@@ -33,7 +33,7 @@ async def button(bot, update):
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
-            chat_id=callback_query.update.chat,
+            chat_id=cb_data.update.chat,
             text=Translation.DOWNLOAD_START,
             reply_to_message_id=update.message_id
         )

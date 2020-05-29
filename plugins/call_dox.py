@@ -25,7 +25,6 @@ import pyrogram
 from pyrogram import Client, Filters, ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton, Message
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-from helper_funcs.chat_base import TRChatBase
 from helper_funcs.upload_display import progress_for_pyrogram
 
 from hachoir.metadata import extractMetadata

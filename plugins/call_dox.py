@@ -48,10 +48,10 @@ async def button(bot, update):
             file_name=download_location,
             progress=progress_for_pyrogram,
             progress_args=(
-                Translation.DOWNLOAD_START, a.message_id, update.chat.id, c_time
+                Translation.DOWNLOAD_START, a.message_id, update.message.chat.id, c_time
             )
         )
-        await bot.delete_messages(chat_id=update.chat.id,message_ids=a.message_id)
+        await bot.delete_messages(chat_id=update.message.chat.id,message_ids=a.message_id)
         if the_real_download_location is not None:
             b = await bot.send_message(
                     text=Translation.UPLOAD_START,

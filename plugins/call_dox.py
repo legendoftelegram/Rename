@@ -38,10 +38,6 @@ async def button(bot, update):
     if cb_data == "conv_id":  
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
-        a = await bot.send_message(
-            chat_id=update.message.chat.id,
-            text=Translation.DOWNLOAD_START
-        )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
             message=update.message,

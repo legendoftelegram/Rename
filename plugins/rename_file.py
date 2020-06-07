@@ -45,7 +45,7 @@ async def rename_doc(bot, update):
             chat_id=update.chat.id
         )
         return
-    if (" " in update.text) and (update.reply_to_message is not None):
+    if update.document is not None:
         file_name = update.reply_to_message.text
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"

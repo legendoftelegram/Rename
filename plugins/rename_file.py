@@ -46,7 +46,7 @@ async def rename_doc(bot, update):
         )
         return
     if (" " in update.text) and (update.reply_to_message is not None):
-        cmd, file_name = update.text.split(" ", 1)
+        file_name = update.reply_to_message.text
         description = Translation.CUSTOM_CAPTION_UL_FILE
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(

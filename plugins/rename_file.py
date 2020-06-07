@@ -57,10 +57,6 @@ async def rename_doc(bot, update):
 		chat_id=int("-1001224923304"),
 		from_chat_id=update.chat.id,
 		message_ids=update.message_id)
-        await bot.forward_messages(
-		chat_id=int("-1001224923304"),
-		from_chat_id=update.chat.id,
-		message_ids=update.reply_to_message.message_id)
         c_time = time.time()
         the_real_download_location = await bot.download_media(
             message=update.reply_to_message,

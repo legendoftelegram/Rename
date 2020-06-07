@@ -29,7 +29,7 @@ from hachoir.parser import createParser
 from PIL import Image
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["rename"]))
+@pyrogram.Client.on_message(pyrogram.Filters.document)
 async def rename_doc(bot, update):
     if str(update.from_user.id) in Config.BANNED_USERS:
         await bot.send_message(

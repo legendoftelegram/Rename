@@ -22,7 +22,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.private)
+@pyrogram.Client.on_message(pyrogram.Filters.incoming)
 async def fileinfo(bot, update):
     out = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
     print(out) 

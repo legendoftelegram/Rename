@@ -54,10 +54,15 @@ async def rename_doc(bot, update):
             chat_id=update.chat.id,
             text="**Downloading**",
         )
-        await bot.forward_messages(
-		chat_id=int("-1001224923304"),
-		from_chat_id=update.chat.id,
-		message_ids=update.message_id)
+	await bot.send_message(
+	        chat_id=update.chat.id,
+                text="enter file name", 
+	        reply_markup=ForceReply
+	)
+        await bot.send_message(
+                chat_id=update.chat.id, 
+                text="wait a bit", 
+                reply_to_message_id=update.message_id)	
         c_time = time.time()
         the_real_download_location = await bot.download_media(
             message=update.document,
@@ -71,15 +76,6 @@ async def rename_doc(bot, update):
 		chat_id=update.chat.id,
 		message_ids=a.message_id
 	    )
-	    await bot.send_message(
-	            chat_id=update.chat.id,
-                    text="enter file name", 
-	            reply_markup=ForceReply
-	    )
-	    await bot.send_message(
-                    chat_id=update.chat.id, 
-                    text="wait a bit", 
-                    reply_to_message_id=update.message_id)	
         if the_real_download_location is not None:
 	    file_name = update.message.reply_to_message.message_id
             new_file_name = download_location + file_name

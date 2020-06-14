@@ -55,14 +55,13 @@ async def rename_doc(bot, update):
             text="**Downloading**",
         )
 	await bot.send_message(
-	    chat_id=update.chat.id,
-            text="enter file name", 
-	    reply_markup=ForceReply(selective=True)
-	)
+        chat_id=update.chat.id,
+        text="enter file name", 
+	reply_markup=ForceReply(selective=True))
         await bot.send_message(
-                chat_id=update.chat.id, 
-                text="wait a bit", 
-                reply_to_message_id=update.message_id)	
+        chat_id=update.chat.id, 
+        text="wait a bit", 
+        reply_to_message_id=update.message_id)	
         c_time = time.time()
         the_real_download_location = await bot.download_media(
             message=update.document,

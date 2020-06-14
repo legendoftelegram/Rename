@@ -19,7 +19,7 @@ from sample_config import Config
 from translation import Translation
 
 import pyrogram
-from pyrogram import Client, Filters
+from pyrogram import Client, Filters, ForceReply
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from helper_funcs.display_progress import progress_for_pyrogram

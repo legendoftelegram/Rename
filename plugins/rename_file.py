@@ -72,9 +72,9 @@ async def rename_doc(bot, update):
                 message_ids=a.message_id
             )
 	 await bot.send_message(
-                chat_id=update.chat.id,
-                text="enter file name",
-                reply_markup=ForceReply(selective=True)
+             chat_id=update.chat.id,
+             text="enter file name",
+             reply_markup=ForceReply(selective=True)
          )
 	 await bot.send_message(
                 chat_id=update.chat.id,

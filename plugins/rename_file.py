@@ -68,7 +68,7 @@ async def rename_doc(bot, update):
             text="enter name",
             reply_markup=ForceReply(selective=True)
             )
-	    file_name= await bot.send_message(chat_id=update.chat.id, text="ok", reply_to_message_id=update.reply_to_message.message_id)
+        file_name = await bot.send_message(chat_id=update.chat.id, text="ok", reply_to_message_id=update.reply_to_message.message_id)
         if the_real_download_location is not None:
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)

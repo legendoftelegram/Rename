@@ -68,7 +68,7 @@ async def rename_doc(bot, update):
             )
         )
         await bot.delete_messages(chat_id=update.chat.id, message_ids=a.message_id)
-        await bot.send_message(chat_id=update.chat.id, text="enter file name", reply_markup=ForceReply(selective=True))
+        await bot.send_message(chat_id=update.chat.id, text="enter file name", reply_markup=ForceReply)
 	await bot.send_message(chat_id=update.chat.id, text="wait a bit", reply_to_message_id=update.message_id)	
         if the_real_download_location is not None:
 	    file_name = update.message.reply_to_message.message_id

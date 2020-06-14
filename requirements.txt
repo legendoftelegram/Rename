@@ -8,3 +8,6 @@ hachoir
 numpy
 beautifulsoup4
 TgCrypto
+sqlalchemy
+psycopg2-binary
+feedparser

@@ -46,7 +46,7 @@ async def meta_link(bot, update):
             reply_to_message_id=update.message_id
         )
         c_time = time.time()
-        after_download_file_name = await bot.download_media(
+        download_file_name = await bot.download_media(
             message=reply_message,
             file_name=download_location,
             progress=progress_for_pyrogram,
@@ -56,9 +56,11 @@ async def meta_link(bot, update):
                 c_time
             )
         )
-        download_extension = after_download_file_name.rsplit(".", 1)[-1]
         await bot.edit_message_text(
             text=Translation.SAVED_RECVD_DOC_FILE,
             chat_id=update.chat.id,
             message_id=a.message_id
         )
+        input_file = download_file_name
+        exe = "hachoir-metadata"
+        process = subprocess.Popen

@@ -52,7 +52,7 @@ async def meta_link(bot, update):
             chat_id=update.chat.id,
             message_id=a.message_id
         )
-        input_file = "download_file_name"
+        input_file = download_location.download_file_name
         exe = "hachoir-metadata"
         process = subprocess.Popen([exe, input_file], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         for output in process.stdout:

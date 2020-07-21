@@ -23,6 +23,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import Client, Filters
 
 from helper_funcs.display_progress import progress_for_pyrogram
+from helper_funcs.rename_bar import progress_for_upload
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
@@ -113,7 +114,7 @@ async def rename_doc(bot, update):
                 thumb=thumb_image_path,
                 caption=description,
                 # reply_markup=reply_markup,
-                progress=progress_for_pyrogram,
+                progress=progress_for_upload,
                 progress_args=(
                     Translation.UPLOAD_START,
 	                  b, 

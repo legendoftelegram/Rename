@@ -28,6 +28,6 @@ async def getchat(bot, update):
     out = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
     print(out) 
     await bot.send_message(
-      text=Translation.USER_TXT.format(out.id, out.type, out.is_verified, out.is_restricted, out.is_scam, out.is_support, out.first_name, out.last_name, out.username),
+      text=Translation.USER_TXT.format(out.document.file_name, out.document.file_size, out.document.mime_type),
       chat_id=update.chat.id
     )

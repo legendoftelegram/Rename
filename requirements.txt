@@ -1,7 +1,6 @@
 aiohttp
 requests
 youtube-dl
-git+git://github.com/google/chatbase-python.git
 git+git://github.com/TGExplore/TGExplore.git
 Pillow
 hachoir

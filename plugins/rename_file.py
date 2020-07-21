@@ -40,6 +40,14 @@ async def rename_doc(bot, update):
             revoke=True
         )
         return
+    try:
+        await bot.get_chat_member('@TR_BOTS',update.chat.id)
+    except:
+        await bot.send_message(
+            text= "@TR_BOTS",
+            chat_id=update.chat.id
+        )
+        return
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
         if len(file_name) > 64:
@@ -54,8 +62,7 @@ async def rename_doc(bot, update):
         download_location = Config.DOWNLOAD_LOCATION + "/"
         a = await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.DOWNLOAD_START,
-            reply_to_message_id=update.message_id
+            text=Translation.DOWNLOAD_START
         )
         c_time = time.time()
         the_real_download_location = await bot.download_media(
@@ -68,39 +75,21 @@ async def rename_doc(bot, update):
                 c_time
             )
         )
+        await bot.delete_messages(
+                chat_id=update.chat.id,
+                message_ids=a.message_id
+            )
         if the_real_download_location is not None:
-            try:
-                await bot.edit_message_text(
-                    text=Translation.SAVED_RECVD_DOC_FILE,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
-                )
-            except:
-                pass
-            if "IndianMovie" in the_real_download_location:
-                await bot.edit_message_text(
-                    text=Translation.RENAME_403_ERR,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
-                )
-                return
             new_file_name = download_location + file_name
             os.rename(the_real_download_location, new_file_name)
-            await bot.edit_message_text(
-                text=Translation.UPLOAD_START,
-                chat_id=update.chat.id,
-                message_id=a.message_id
+            b = await bot.send_message(
+                    text="**Uploading**",
+                    chat_id=update.chat.id,
                 )
             logger.info(the_real_download_location)
             thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
             if not os.path.exists(thumb_image_path):
-                mes = await thumb(update.from_user.id)
-                if mes != None:
-                    m = await bot.get_messages(update.chat.id, mes.msg_id)
-                    await m.download(file_name=thumb_image_path)
-                    thumb_image_path = thumb_image_path
-                else:
-                    thumb_image_path = None
+                thumb_image_path = None
             else:
                 width = 0
                 height = 0
@@ -120,34 +109,29 @@ async def rename_doc(bot, update):
                 img.save(thumb_image_path, "JPEG")
                 # https://pillow.readthedocs.io/en/3.1.x/reference/Image.html#create-thumbnails
             c_time = time.time()
-            await bot.send_document(
+            out=await bot.send_document(
                 chat_id=update.chat.id,
                 document=new_file_name,
                 thumb=thumb_image_path,
                 caption=description,
                 # reply_markup=reply_markup,
-                reply_to_message_id=update.reply_to_message.message_id,
                 progress=progress_for_pyrogram,
                 progress_args=(
-                    Translation.UPLOAD_START,
-                    a, 
-                    c_time
+                    Translation.UPLOAD_START, b.message_id, update.chat.id, c_time, update, bot
                 )
             )
             try:
                 os.remove(new_file_name)
-                os.remove(thumb_image_path)
             except:
                 pass
             await bot.edit_message_text(
-                text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG,
+                text="**processed successfully**",
                 chat_id=update.chat.id,
-                message_id=a.message_id,
+                message_id=b.message_id,
                 disable_web_page_preview=True
             )
     else:
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE,
-            reply_to_message_id=update.message_id
+            text=Translation.REPLY_TO_DOC_FOR_RENAME_FILE
         )

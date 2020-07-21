@@ -31,7 +31,7 @@ async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
         chat_id=update.chat.id,
-        text="**just rename ur files thats all**"
+        text=Translation.NO_COD
     )
 
 @pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))

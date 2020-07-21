@@ -23,7 +23,6 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from pyrogram import Client, Filters
 
 from helper_funcs.display_progress import progress_for_pyrogram
-from helper_funcs.rename_bar import progress_for_upload
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser

@@ -16,4 +16,6 @@ class Translation(object):
     CANCEL_STR = "**Process Cancelled**"
     CANCEL_TEXT = "**cancelled succesfully**"
     VER_TX = "**swathy**"
-    USER_TXT ="""**🎦file analised🌀\n`/rename {}`\n💤size💤: {}\n📵meadia type📵: {}**"""
+    USER_TXT ="""**🎦file analised🌀
+    \n`/rename {}`
+    \n💤size💤: {}\n📵meadia type📵: {}**"""

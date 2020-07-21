@@ -19,3 +19,4 @@ class Translation(object):
     USER_TXT ="""**🎦file analised🌀
     \n`/rename {}`
     \n💤size💤: {}\n📵meadia type📵: {}**"""
+    NO_COD = "**swathy**"

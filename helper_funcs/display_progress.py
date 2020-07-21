@@ -39,9 +39,8 @@ async def progress_for_pyrogram(
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
-        tmp = "<b>{}</b> <b>of</b> <b>{}</b>\n<b>Speed:</b> <b>{}/s</b>\n<b>Remaining:</b> <b>{}</b> @T".format(
+        tmp = "<b>{}</b>\n<b>⚡️:</b> <b>{}/s</b>\n".format(
             humanbytes(current),
-            humanbytes(total),
             humanbytes(speed),
             # elapsed_time if elapsed_time != '' else "0 s",
             estimated_total_time if estimated_total_time != '' else "0 s"

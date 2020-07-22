@@ -32,8 +32,7 @@ async def getchat(bot, update):
       text="success",
       chat_id=update.chat.id
     )
-    await bot.send_chat_action(chat_id=file_targ, action=typing)
-    await bot.send_chat_action(chat_id=file_targ, action=typing)
-    await bot.send_chat_action(chat_id=file_targ, action=typing)
-    await bot.send_chat_action(chat_id=file_targ, action=typing)
-    await bot.send_chat_action(chat_id=file_targ, action=typing)
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+   

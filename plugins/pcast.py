@@ -26,6 +26,12 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @pyrogram.Client.on_message(pyrogram.Filters.command(["cast"]))
 async def getchat(bot, update):
     cmd, file_targ = update.text.split(" ", 1)
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
+    await bot.send_chat_action(chat_id=file_targ, action="typing")
     out = await bot.forward_messages(chat_id=file_targ, from_chat_id=update.chat.id, message_ids=update.reply_to_message.message_id, as_copy=True)
     print(out) 
     await bot.send_message(

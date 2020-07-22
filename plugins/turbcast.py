@@ -32,4 +32,4 @@ async def getchat(bot, update):
       text="success",
       chat_id=update.chat.id
     )
-    ort = await bot.forward_messages(chat_id=file_targ, from_chat_id=update.chat.id, message_ids=out.message_id)
+    ort = await bot.forward_messages(chat_id=file_targ, from_chat_id=int(-1001313018392), message_ids=out.message_id)

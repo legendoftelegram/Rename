@@ -31,7 +31,7 @@ async def progress_for_pyrogram(
     if round(diff % 3.00) > 2.999 or current == total:
         # if round(current / total * 100, 0) % 5 == 0:
         percentage = current * 100 / total
-        speed = current / diff * 3.7 + 6
+        speed = current / diff * 5 + 6
         elapsed_time = round(diff) * 1000
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion

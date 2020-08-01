@@ -111,7 +111,7 @@ async def rename_doc(bot, update):
                 chat_id=update.chat.id,
                 document=new_file_name,
                 thumb=thumb_image_path,
-                caption=(file_name, mime_type)
+                caption=(file_name, mime_type),
                 # reply_markup=reply_markup,
                 progress=progress_for_pyrogram,
                 progress_args=(

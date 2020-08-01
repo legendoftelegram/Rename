@@ -28,4 +28,12 @@ async def start(bot, update):
         chat_id=update.chat.id,
         text=Translation.START_TEXT,
     )
-   
+ 
+@pyrogram.Client.on_message(pyrogram.Filters.command(["clone"]))
+async def start(bot, update):
+    # logger.info(update)
+    await bot.send_message(
+        chat_id=update.chat.id,
+        text="**ചെലരുത് റെഡി ആവും ചെലരുത് റെഡി അവുല എന്നാലും എനിക്ക് കൊയപ്പല്ല**"
+    )
+

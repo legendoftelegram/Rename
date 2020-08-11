@@ -26,7 +26,7 @@ if __name__ == "__main__" :
     plugins = dict(
         root="plugins"
     )
-    Client.DOWNLOAD_WORKERS = 6
+    Client.DOWNLOAD_WORKERS = 8
     app = pyrogram.Client(
         "renamedl clone",
         bot_token=Config.TG_BOT_TOKEN,

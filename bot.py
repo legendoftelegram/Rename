@@ -15,6 +15,7 @@ from sample_config import Config
 
 
 import pyrogram
+from pyrogram import Client
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
@@ -25,6 +26,7 @@ if __name__ == "__main__" :
     plugins = dict(
         root="plugins"
     )
+    Client.DOWNLOAD_WORKERS = 10
     app = pyrogram.Client(
         "renamedl clone",
         bot_token=Config.TG_BOT_TOKEN,
@@ -32,5 +34,5 @@ if __name__ == "__main__" :
         api_hash=Config.API_HASH,
         plugins=plugins, workers = 200
     )
-    app.DOWNLOAD_WORKERS = 5
     app.run()
+    

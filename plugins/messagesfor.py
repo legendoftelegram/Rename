@@ -18,12 +18,12 @@ from sample_config import Config
 from translation import Translation
 
 import pyrogram
-from pyrogram import Filters
+from pyrogram import filters
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.document | Filters.video)
+@pyrogram.Client.on_message(pyrogram.filters.document | filters.video)
 async def getchat(bot, update):
     out = await bot.get_messages(chat_id=update.chat.id, message_ids=update.message_id)
     print(out) 

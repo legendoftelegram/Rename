@@ -1,5 +1,5 @@
 class Translation(object):
-    START_TEXT = """**a bot by @TR_BOTS**"""
+    START_TEXT = """**a bot by @SH_Bots**"""
     DOWNLOAD_START = "**Downloading**"
     UPLOAD_START = "**Uploading**"
     NOT_AUTH_USER_TEXT = "<b>Sorry darling You are B A N N ED 🤣....</b>"

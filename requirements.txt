@@ -1,7 +1,7 @@
 aiohttp
 requests
 youtube-dl
-https://github.com/CW4RR10R/pyrogram/archive/asyncio.zip
+pyrogram==1.0.7
 Pillow
 hachoir
 numpy

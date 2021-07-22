@@ -26,7 +26,7 @@ def GetExpiryDate(chat_id):
     expires_at = (str(chat_id))
     return expires_at
     
-@pyrogram.Client.on_message(pyrogram.Filters.command(["help", "about"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["help", "about"]))
 async def help_user(bot, update):
     # logger.info(update)
     await bot.send_message(
@@ -34,7 +34,7 @@ async def help_user(bot, update):
         text=Translation.NO_COD
     )
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["showthumb"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["showthumb"]))
 async def view_thumbnail(bot, update):
     photopath = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
     if os.path.exists(photopath):
@@ -50,7 +50,7 @@ async def view_thumbnail(bot, update):
         chat_id=update.chat.id,
         text=Translation.NO_CUSTOM_THUMB_NAIL_FOUND,
     )
-@pyrogram.Client.on_message(pyrogram.Filters.command(["version"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["version"]))
 async def start(bot, update):
     # logger.info(update)
     await bot.send_message(
@@ -58,7 +58,7 @@ async def start(bot, update):
         text=Translation.VER_TX,
     )      
       
-@pyrogram.Client.on_message(pyrogram.Filters.command(["cancel"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["cancel"]))
 async def cancel(bot, update):
     # logger.info(update)
     await bot.send_message(

@@ -1,5 +1,15 @@
 class Translation(object):
-    START_TEXT = """**a bot by @SH_Bots**"""
+    START_TEXT = """**Hello
+
+    
+
+I'm A Simple File Renamer Bot With Permanent Thumbnail support!💯
+
+Send me any Telegram file and select rename option.
+
+Click /help for more details....
+
+You must subscribe our channel in order to use me😇**"""
     DOWNLOAD_START = "**Downloading**"
     UPLOAD_START = "**Uploading**"
     NOT_AUTH_USER_TEXT = "<b>Sorry darling You are B A N N ED 🤣....</b>"

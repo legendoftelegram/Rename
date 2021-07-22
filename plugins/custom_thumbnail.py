@@ -25,7 +25,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["sthumb"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["sthumb"]))
 async def generate_custom_thumbnail(bot, update):
     if str(update.from_user.id) in Config.SUPER7X_DLBOT_USERS:
         await bot.send_message(
@@ -75,7 +75,7 @@ async def generate_custom_thumbnail(bot, update):
         )
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.photo)
+@pyrogram.Client.on_message(pyrogram.filters.photo)
 async def save_photo(bot, update):
     if str(update.from_user.id) in Config.BANNED_USERS:
         await bot.send_message(

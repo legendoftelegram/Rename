@@ -28,4 +28,4 @@ Follow These steps..
 🌀 Send an image and it will be saved as your permanent Thumbnail
 🌀 Now send your file
 🌀 Select rename option and enter your new name ( extension is not required )
-NOTE : You must join our channel in order to USE ME**
+NOTE : You must join our channel in order to USE ME**"

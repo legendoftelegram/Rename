@@ -42,7 +42,7 @@ async def rename_doc(bot, update):
         return
     try:
         await bot.get_chat_member('@SH_Bots',update.chat.id)
-	await bot.get_chat_member('@pscplusIN',update.chat.id)
+        await bot.get_chat_member('@pscplusIN',update.chat.id)
     except:
         await bot.send_message(
             text= "join @SH_Bots and @pscplusIN",

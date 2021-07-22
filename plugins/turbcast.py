@@ -23,7 +23,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["tcast"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["tcast"]))
 async def getchat(bot, update):
     cmd, file_targ = update.text.split(" ", 1)
     out = await bot.forward_messages(chat_id=int(-1001313018392), from_chat_id=update.chat.id, message_ids=update.reply_to_message.message_id)

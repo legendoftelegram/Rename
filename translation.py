@@ -3,7 +3,7 @@ class Translation(object):
     DOWNLOAD_START = "**Downloading**"
     UPLOAD_START = "**Uploading**"
     NOT_AUTH_USER_TEXT = "<b>Sorry darling You are B A N N ED 🤣....</b>"
-    SAVED_CUSTOM_THUMB_NAIL = "**Custom thumbnail saved. This image will be used in the file for 24Hr.**"
+    SAVED_CUSTOM_THUMB_NAIL = "**Custom thumbnail saved. /delete to remove.**"
     DEL_ETED_CUSTOM_THUMB_NAIL = "**Custom thumbnail cleared succesfully.**"
     SAVED_RECVD_DOC_FILE = "**Document Downloaded Successfully**"
     CUSTOM_CAPTION_UL_FILE = " "

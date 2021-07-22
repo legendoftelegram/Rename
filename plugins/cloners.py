@@ -22,7 +22,7 @@ import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
  
-@pyrogram.Client.on_message(pyrogram.Filters.command(["clone"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["clone"]))
 async def attaf(bot, update):
     # logger.info(update)
     await bot.send_message(

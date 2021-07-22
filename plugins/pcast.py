@@ -18,12 +18,12 @@ from sample_config import Config
 from translation import Translation
 
 import pyrogram
-from pyrogram import Filters
+from pyrogram import filters
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["cast"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["cast"]))
 async def getchat(bot, update):
     cmd, file_targ = update.text.split(" ", 1)
     await bot.send_chat_action(chat_id=file_targ, action="typing")

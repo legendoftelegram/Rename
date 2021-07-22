@@ -21,7 +21,7 @@ from translation import Translation
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@pyrogram.Client.on_message(pyrogram.Filters.command(["start"]))
+@pyrogram.Client.on_message(pyrogram.filters.command(["start"]))
 async def start(bot, update):
     # logger.info(update)
     await bot.send_message(

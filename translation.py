@@ -23,7 +23,7 @@ class Translation(object):
 
 Follow These steps..
 
-    
+
 
 🌀 Send an image and it will be saved as your permanent Thumbnail
 
